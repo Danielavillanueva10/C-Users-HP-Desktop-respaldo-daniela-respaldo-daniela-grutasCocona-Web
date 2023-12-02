@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Spring eCommerce</title>
+  <link rel="stylesheet" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="cl-icon/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <div th:insert="~{usuario/template_usuario.html::navegacion}"></div>
+
+
+  <!-- Page Content -->
+  <div class="wrapper">
+    <form class="form" th:action="@{/usuario/acceder}" method="post">
+      <h2 class="title" style="color: white;">Inicio</h2>
+      <div class="inp">
+        <input type="email" name="email" id="email" class="input" placeholder="Usuario">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div class="inp">
+        <input type="password" name="password" id="password" class="input" placeholder="Contraseña">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <button class="submit">Iniciar Sesion</button>
+      <p class="footer-pregunta" style="color: white;">¿No tienes una cuenta? <a th:href="@{/usuario/registro}" class="card-link">Por favor, Registrate</a></p>
+      
+    </form>
+    <div></div>
+    <div class="banner-bienvenida">
+      <h1 class="wel_text">BIENVENIDO<br/></h1>
+      <p class="para">Gracias por visitarnos<br/>Grutas del Cocona<br/>@grutras.cocona</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div th:insert="~{usuario/template_usuario.html::footer}"></div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+    <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>
